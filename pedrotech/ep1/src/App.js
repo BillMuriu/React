@@ -1,19 +1,32 @@
 import React from 'react'
+import "./App.css"
 
 const App = () => {
 
-  const age = 10;
-  const isBlue = true;
-
-
   return (
     <div className='App'>
-      { age === 19 ? <h1>Over age</h1> : <h1>Under age</h1>}
-      <h1 style={{color: isBlue ? '#61dafb': 'green'}}>This is a color</h1>
-      { isBlue && <button> This is a button</button>}
+      <Users />
     </div>
     
-  ) 
+  )
 }
+
+const Users = () => {
+  const myArray = [
+    { id: 1, name: 'Justin', type: 'string' },
+    { id: 2, name: 'mbugua', type: 'string' },
+    { id: 3, name: 'maita', type: 'string' },
+    { id: 4, label: 'four', type: 'non-string' },
+    { id: 5, data: { key: 'value' }, type: 'non-string' },
+  ];
+
+  return (
+    <>
+      {myArray.map((item, index) => {
+      return <h1 key={index}>{item.name}</h1>
+      })}
+    </>
+  )
+} 
 
 export default App
