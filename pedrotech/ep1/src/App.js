@@ -1,11 +1,19 @@
-import './App.css';
+import React from 'react'
 
-function App() {
+const App = () => {
+
+  const age = 10;
+  const isBlue = true;
+
+
   return (
     <div className='App'>
-      <h1 className='name'>Bill</h1>
+      { age === 19 ? <h1>Over age</h1> : <h1>Under age</h1>}
+      <h1 style={{color: isBlue ? '#61dafb': 'green'}}>This is a color</h1>
+      { isBlue && <button> This is a button</button>}
     </div>
-  );
+    
+  ) 
 }
 
-export default App;
+export default App
